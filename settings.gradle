@@ -1,0 +1,3 @@
+include ':dandroidlib'
+include ':app'
+rootProject.name = "Dandroid"
