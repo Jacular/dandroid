@@ -1,0 +1,12 @@
+apply {
+    from "${rootDir.path}/lib.gradle"
+}
+
+android {
+    //统一资源前缀，规范资源引用
+    resourcePrefix "lib_arouter"
+}
+
+dependencies {
+
+}

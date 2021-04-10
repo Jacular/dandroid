@@ -1,3 +1,5 @@
-include ':dandroidlib'
 include ':app'
 rootProject.name = "Dandroid"
+include ':module-home'
+include ':library-base'
+include ':lib-arouter'
