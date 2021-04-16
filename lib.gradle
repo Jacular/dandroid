@@ -4,13 +4,13 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion build_version.compileSdkVersion
+    compileSdkVersion rootProject.ext.build_version.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion build_version.minSdkVersion
-        targetSdkVersion build_version.targetSdkVersion
-        versionCode build_version.versionCode
-        versionName build_version.versionName
+        minSdkVersion rootProject.ext.build_version.minSdkVersion
+        targetSdkVersion rootProject.ext.build_version.targetSdkVersion
+        versionCode rootProject.ext.build_version.versionCode
+        versionName rootProject.ext.build_version.versionName
 
         consumerProguardFiles 'proguard-rules.pro'
     }
@@ -54,8 +54,12 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
+    //基础模块
+    api project(path: ':library-base')
+    //公用模块
+    api project(path: ':lib-common')
     //each遍历
-    dependenciesId.each{k,v-> kapt v}
+    rootProject.ext.dependenciesId.each{k,v-> api v}
 }
 
 

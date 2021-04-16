@@ -13,7 +13,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/lib-arouter" />
+            <option value="$PROJECT_DIR$/lib-common" />
+            <option value="$PROJECT_DIR$/lib-network" />
             <option value="$PROJECT_DIR$/library-base" />
+            <option value="$PROJECT_DIR$/library-global" />
             <option value="$PROJECT_DIR$/module-home" />
           </set>
         </option>

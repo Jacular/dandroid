@@ -3,7 +3,7 @@
     package="com.dandroid.module_home">
 
     <application >
-        <activity android:name=".ModelHomeActivity">
+        <activity android:name="com.dandroid.home.ModelHomeActivity">
 
         </activity>
     </application>

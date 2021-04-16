@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dandroid">
-        <activity android:name=".ModelHomeActivity">
+        <activity android:name="com.dandroid.home.ModelHomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

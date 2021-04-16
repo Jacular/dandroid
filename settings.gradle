@@ -1,3 +1,6 @@
+include ':library-global'
+include ':lib-common'
+include ':lib-network'
 include ':app'
 rootProject.name = "Dandroid"
 include ':module-home'
