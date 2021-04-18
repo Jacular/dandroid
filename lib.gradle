@@ -55,11 +55,12 @@ android {
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     //基础模块
-    api project(path: ':library-base')
+    api project(path: ':lib-base')
     //公用模块
     api project(path: ':lib-common')
+
     //each遍历
-    rootProject.ext.dependenciesId.each{k,v-> api v}
+    api apiDependenciesId
 }
 
 

@@ -28,6 +28,7 @@ ext {
             "lifecycle_livedata_ktx"  : "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0",
             "activity"                : "androidx.activity:activity:1.1.0",
             "fragment_ktx"            : "androidx.fragment:fragment-ktx:1.2.5",
+            "material"                :'com.google.android.material:material:1.2.1',
             //网络请求及其相关解析，适配器
             "okhttp"                  : "com.squareup.okhttp3:okhttp:4.4.1",
             "okhttp_log"              : "com.squareup.okhttp3:logging-interceptor:4.4.1",
@@ -36,7 +37,8 @@ ext {
             //支持kotlin Deferred
             "retrofit_adapter_kt"     : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2",
             //Retrofit 同时支持多个 BaseUrl 以及动态改变 BaseUrl
-            'retrofit-url-manager'                     : 'me.jessyan:retrofit-url-manager:1.4.0',
+            'retrofit-url-manager'    : 'me.jessyan:retrofit-url-manager:1.4.0',
+          //  'persistentCookieJar'     : 'com.github.franmontiel:PersistentCookieJar:v1.0.1',
             //适配器，刷新加载请求头
             "brvah"                   : "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
             "refresh_layout"          : "com.scwang.smart:refresh-layout-kernel:2.0.1",
@@ -94,5 +96,7 @@ ext {
             H5_URL_TEST    : "https://h5.nlsaas.com",//外网开发
             SOCKET_URL_TEST    : "https://socket.nlsaas.com",//外网开发
     ]
+
+    apiDependenciesId = dependenciesId.values()
 
 }
