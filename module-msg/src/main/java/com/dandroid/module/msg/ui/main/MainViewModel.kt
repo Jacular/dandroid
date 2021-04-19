@@ -1,7 +1,8 @@
 package com.dandroid.module.msg.ui.main
 
-import androidx.lifecycle.ViewModel
 
-class MainViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+import com.dandroid.lib.base.viewmodel.BaseViewModel
+
+class MainViewModel : BaseViewModel() {
+
 }

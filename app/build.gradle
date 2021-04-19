@@ -32,15 +32,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    if (!isRelease.toBoolean()) {
-        implementation project(path: ':module-login')
-        implementation project(path: ':module-user')
-        implementation project(path: ':module-msg')
-        implementation project(path: ':module-home')
+    if (isRelease.toBoolean()) {
+        //主业务模块
+        implementation project(':module-main')
+        implementation project(':module-user')
+        implementation project(':module-msg')
+        implementation project(':module-home')
     } else {
-        implementation project(path: ':lib-base')
-        implementation project(path: ':lib-common')
-        implementation project(path: ':lib-arouter')
+        implementation project(':lib-base')
     }
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

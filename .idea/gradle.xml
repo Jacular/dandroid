@@ -18,7 +18,7 @@
             <option value="$PROJECT_DIR$/lib-global" />
             <option value="$PROJECT_DIR$/lib-network" />
             <option value="$PROJECT_DIR$/module-home" />
-            <option value="$PROJECT_DIR$/module-login" />
+            <option value="$PROJECT_DIR$/module-main" />
             <option value="$PROJECT_DIR$/module-msg" />
             <option value="$PROJECT_DIR$/module-user" />
           </set>

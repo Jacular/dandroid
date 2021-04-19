@@ -8,27 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.dandroid.lib.arouter.fragment.RouterFragmentPath
+import com.dandroid.lib.base.BaseFragment
+import com.dandroid.module.user.databinding.ModuleUserFragmentBinding
 
 @Route(path = RouterFragmentPath.User.PAGER_USER)
-class UserFragment : Fragment() {
+class UserFragment : BaseFragment<UserViewModel,ModuleUserFragmentBinding>() {
 
     companion object {
         fun newInstance() = UserFragment()
     }
 
-    private lateinit var viewModel: UserViewModel
+    override fun layoutId(): Int =R.layout.module_user_fragment
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.module_user_fragment, container, false)
-    }
+    override fun initView(savedInstanceState: Bundle?) {
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

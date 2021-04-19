@@ -57,7 +57,7 @@ android {
         }
         release {
             minifyEnabled true
-            if (isRelease.toBoolean()) {
+            if (!isRelease.toBoolean()) {
                 shrinkResources true
             }
             zipAlignEnabled true

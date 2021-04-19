@@ -1,3 +1,4 @@
+include ':module-main'
 include ':lib-global'
 include ':lib-base'
 include ':lib-arouter'
@@ -6,6 +7,5 @@ include ':lib-network'
 include ':app'
 rootProject.name = "Dandroid"
 include ':module-home'
-include ':module-login'
 include ':module-user'
 include ':module-msg'

@@ -8,7 +8,7 @@ import com.dandroid.lib.base.BaseApplication
  */
 class ModuleLifecycleConfig private constructor() {
     var initModuleNames =
-        arrayOf<String>("com.dandroid.lib.base.module.CommonModuleInit")
+        arrayOf("com.dandroid.lib.base.module.CommonModuleInit","com.dandroid.module.main.MainModuleInit")
     private object SingleHolder {
         val instance = ModuleLifecycleConfig()
     }

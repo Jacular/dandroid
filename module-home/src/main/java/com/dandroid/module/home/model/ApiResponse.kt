@@ -1,6 +1,6 @@
 package com.dandroid.module.home.model
 
-import com.dandroid.base.response.BaseResponse
+import com.dandroid.lib.base.response.BaseResponse
 
 
 /**

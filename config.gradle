@@ -29,6 +29,10 @@ ext {
             "activity"                : "androidx.activity:activity:1.1.0",
             "fragment_ktx"            : "androidx.fragment:fragment-ktx:1.2.5",
             "material"                :'com.google.android.material:material:1.2.1',
+            "navigation"              :'androidx.navigation:navigation-fragment:2.2.2',
+            "navigation_ui"           :'androidx.navigation:navigation-ui:2.2.2',
+            "navigation-fragment-ktx" :'androidx.navigation:navigation-fragment-ktx:2.2.2',
+            "navigation-ui-ktx"       :'androidx.navigation:navigation-ui-ktx:2.2.2',
             //网络请求及其相关解析，适配器
             "okhttp"                  : "com.squareup.okhttp3:okhttp:4.4.1",
             "okhttp_log"              : "com.squareup.okhttp3:logging-interceptor:4.4.1",
@@ -67,10 +71,10 @@ ext {
             "live_event_bus"          : "com.jeremyliao:live-event-bus-x:1.7.2",
 
             //multidex
-            "multidex"                : "androidx.multidex:multidex:2.0.1",
+           // "multidex"                : "androidx.multidex:multidex:2.0.1",
 
             // 内存泄漏检查
-            "leakcanary"               : "com.squareup.leakcanary:leakcanary-android:2.5",
+          //  "leakcanary"               : "com.squareup.leakcanary:leakcanary-android:2.5",
             "mmkv"                     : "com.tencent:mmkv:1.0.23",
 
 
