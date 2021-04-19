@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.dandroid.base.manage.ActivityManage.addActivity
 import com.dandroid.base.manage.ActivityManage.removeActivity
 
-class BaseApplication : Application() {
+open class BaseApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         setApplication(this)

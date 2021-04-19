@@ -1,8 +1,8 @@
-package com.dandroid.home.request
+package com.dandroid.module.home.request
 
-import com.dandroid.home.model.ApiPagerResponse
-import com.dandroid.home.model.ApiResponse
-import com.dandroid.home.model.DiscountDetailResponse
+import com.dandroid.module.home.model.ApiPagerResponse
+import com.dandroid.module.home.model.ApiResponse
+import com.dandroid.module.home.model.DiscountDetailResponse
 
 import retrofit2.http.*
 
@@ -16,7 +16,7 @@ interface ApiService {
      * 解析实体内容
      */
     @FormUrlEncoded
-    @POST("user/login")
+    @POST("demo/bean")
     suspend fun login(
         @Field("username") username: String,
         @Field("password") pwd: String
@@ -26,7 +26,7 @@ interface ApiService {
      * 只返回结果，不解析
      */
     @FormUrlEncoded
-    @POST("user/register")
+    @POST("demo/any")
     suspend fun register(
         @Field("username") username: String, @Field("password") pwd: String, @Field(
             "repassword"
@@ -36,7 +36,7 @@ interface ApiService {
     /**
      * 获取数组方式
      */
-    @GET("banner/json")
+    @GET("demo/listJson")
     suspend fun getList(): ApiResponse<ArrayList<DiscountDetailResponse>>
 
 
@@ -44,7 +44,7 @@ interface ApiService {
     /**
      * 分页方式
      */
-    @GET("article/list/{page}/json")
+    @GET("demo/list/{page}/json")
     suspend fun getPageList(@Path("page") pageNo: Int): ApiResponse<ApiPagerResponse<ArrayList<DiscountDetailResponse>>>
 
 

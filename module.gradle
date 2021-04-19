@@ -49,6 +49,7 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
+            rootProject.ext.devConfigs.each{k,v-> buildConfigField "String", k , v}
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
@@ -57,6 +58,7 @@ android {
                 shrinkResources true
             }
             zipAlignEnabled true
+            rootProject.ext.releaseConfigs.each{k,v-> buildConfigField "String", k,v}
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -81,9 +83,11 @@ android {
         jvmTarget = "1.8"
     }
 
-    dataBinding {
-        enabled true
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
     }
+
 }
 
 dependencies {

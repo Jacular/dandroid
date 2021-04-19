@@ -1,4 +1,4 @@
-package com.dandroid.home.model
+package com.dandroid.module.home.model
 
 import com.dandroid.base.response.BaseResponse
 
