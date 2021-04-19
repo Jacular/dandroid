@@ -3,15 +3,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "30.0.0"
+    compileSdkVersion rootProject.ext.build_version.compileSdkVersion
 
     defaultConfig {
         applicationId "com.dandroid.app"
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.build_version.minSdkVersion
+        targetSdkVersion rootProject.ext.build_version.targetSdkVersion
+        versionCode rootProject.ext.build_version.versionCode
+        versionName rootProject.ext.build_version.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -33,14 +32,18 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    //宿主项目中判断组件是否需要独立运行
-    if (isRelease.toBoolean()) {
-        //组件独立运行时，宿主项目直接依赖基础库，避免编译错误
-        implementation project(':library-base')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.0'
+    if (!isRelease.toBoolean()) {
+        implementation project(path: ':module-login')
+        implementation project(path: ':module-user')
+        implementation project(path: ':module-msg')
+        implementation project(path: ':module-home')
     } else {
-        //首页模块
-        implementation project(':module-home')
-
+        implementation project(path: ':lib-base')
     }
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
 }

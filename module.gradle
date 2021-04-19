@@ -1,8 +1,9 @@
 if (isRelease.toBoolean()) {
+    apply plugin: 'com.android.library'
+} else {
     apply plugin: 'com.android.application'
     configSigning project
-} else {
-    apply plugin: 'com.android.library'
+
 }
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -42,6 +43,7 @@ android {
                     //正式版本时，排除alone文件夹下所有调试文件
                     exclude 'src/main/debug/*'
                 }
+
             }
         }
     }
@@ -92,17 +94,16 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    //基础模块
-    api project(path: ':library-base')
-    //公用模块
-    api project(path: ':lib-common')
-    //组件化交互模块
-    api project(path: ':lib-arouter')
-
-
-
+//    //基础模块
+//    api project(path: ':lib-base')
+//    //公用模块
+//    api project(path: ':lib-common')
+//    //组件化交互模块
+//    api project(path: ':lib-arouter')
+//    //网络模块
+//    api project(path: ':lib-network')
     //each遍历
-    rootProject.ext.dependenciesId.each{k,v-> api v}
+    api rootProject.ext.apiDependenciesId
 }
 
 

@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder
 import com.dandroid.network.interceptor.logging.LogInterceptor
 import okhttp3.Cache
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
@@ -34,8 +35,14 @@ class NetworkApi: BaseNetworkApi() {
         builder.apply {
             //设置缓存配置 缓存最大10M
             cache(Cache(File(appContext.cacheDir, "newlink"), 10 * 1024 * 1024))
+            val httpLoggingInterceptor = HttpLoggingInterceptor()
+            if (BuildConfig.DEBUG) {
+                httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+            } else {
+                httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.NONE
+            }
             //添加Cookies自动持久化
-           // cookieJar(cookieJar)
+            cookieJar(cookieJar)
             //示例：添加公共heads 注意要设置在日志拦截器之前，不然Log中会不显示head信息
             addInterceptor(HeadInterceptor())
             //添加缓存拦截器 可传入缓存天数，不传默认7天
@@ -60,9 +67,9 @@ class NetworkApi: BaseNetworkApi() {
         }
     }
 
-//    val cookieJar: PersistentCookieJar by lazy {
-//        PersistentCookieJar(SetCookieCache(), SharedPrefsCookiePersistor(appContext))
-//    }
+    val cookieJar: PersistentCookieJar by lazy {
+        PersistentCookieJar(SetCookieCache(), SharedPrefsCookiePersistor(appContext))
+    }
 
 }
 
