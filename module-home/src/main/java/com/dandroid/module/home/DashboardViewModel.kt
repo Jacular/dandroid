@@ -3,7 +3,7 @@ package com.dandroid.module.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.dandroid.base.viewmodel.BaseViewModel
+import com.dandroid.lib.base.viewmodel.BaseViewModel
 
 class DashboardViewModel : BaseViewModel() {
 

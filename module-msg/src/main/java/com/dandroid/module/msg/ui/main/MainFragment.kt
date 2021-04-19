@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.alibaba.android.arouter.facade.annotation.Route
+import com.dandroid.lib.arouter.fragment.RouterFragmentPath
 import com.dandroid.module.msg.R
 
+@Route(path = RouterFragmentPath.Msg.PAGER_MSG)
 class MainFragment : Fragment() {
 
     companion object {
@@ -20,7 +23,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        return inflater.inflate(R.layout.module_msg_main_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

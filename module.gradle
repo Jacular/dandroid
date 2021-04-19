@@ -16,6 +16,7 @@ kapt {
 }
 
 android {
+    ndkVersion '21.0.6113669'
     compileSdkVersion rootProject.ext.build_version.compileSdkVersion
 
     defaultConfig {
@@ -36,13 +37,13 @@ android {
             if (isRelease.toBoolean()) {
                 //独立运行
                 manifest.srcFile 'src/main/AndroidManifest.xml'
+                resources {
+                    //正式版本时，排除debug文件夹下所有调试文件
+                    exclude 'src/main/debug/*'
+                }
             } else {
                 //合并到宿主
                 manifest.srcFile 'src/main/debug/AndroidManifest.xml'
-                resources {
-                    //正式版本时，排除alone文件夹下所有调试文件
-                    exclude 'src/main/debug/*'
-                }
 
             }
         }
@@ -51,7 +52,7 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
-            rootProject.ext.devConfigs.each{k,v-> buildConfigField "String", k , v}
+            rootProject.ext.devConfigs.each{k,v-> buildConfigField "String", k , v }
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
@@ -94,16 +95,17 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-//    //基础模块
-//    api project(path: ':lib-base')
-//    //公用模块
-//    api project(path: ':lib-common')
-//    //组件化交互模块
-//    api project(path: ':lib-arouter')
-//    //网络模块
-//    api project(path: ':lib-network')
+    //基础模块
+    api project(path: ':lib-base')
+    //公用模块
+    api project(path: ':lib-common')
+    //组件化交互模块
+    api project(path: ':lib-arouter')
+    //网络模块
+    api project(path: ':lib-network')
     //each遍历
-    api rootProject.ext.apiDependenciesId
+    api apiDependenciesId
+    rootProject.ext.compilers.each{k,v-> kapt v}
 }
 
 

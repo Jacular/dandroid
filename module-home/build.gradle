@@ -4,19 +4,16 @@ apply {
 
 android {
     defaultConfig {
-        //如果是独立模块，则使用当前组件的包名
+        //如果是开发模块，则使用当前组件的包名
         if (!isRelease.toBoolean()) {
             applicationId "com.dandroid.module.home"
         }
     }
     //统一资源前缀，规范资源引用
-    resourcePrefix "module_home"
+    resourcePrefix "module_home_"
 }
 
 dependencies {
 
 
-
-    //each遍历
-    api apiDependenciesId
 }

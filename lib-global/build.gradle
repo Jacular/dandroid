@@ -1,12 +1,69 @@
-apply {
-    from "${rootDir.path}/lib.gradle"
-}
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 android {
+    compileSdkVersion rootProject.ext.build_version.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.build_version.minSdkVersion
+        targetSdkVersion rootProject.ext.build_version.targetSdkVersion
+        versionCode rootProject.ext.build_version.versionCode
+        versionName rootProject.ext.build_version.versionName
+
+        consumerProguardFiles 'proguard-rules.pro'
+    }
     //统一资源前缀，规范资源引用
     resourcePrefix "lib_global"
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        if (isRelease.toBoolean()) {
+            exclude 'META-INF/*'
+        }
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+        disable "ResourceType"
+        abortOnError false
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
 }
 
 dependencies {
-
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    //each遍历
+    api apiDependenciesId
+    rootProject.ext.dependenciesId.each{k,v-> kapt v}
 }
+

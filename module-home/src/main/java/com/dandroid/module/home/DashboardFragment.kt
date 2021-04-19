@@ -1,15 +1,19 @@
 package com.dandroid.module.home
 
 import android.os.Bundle
+import com.alibaba.android.arouter.facade.annotation.Route
+import com.dandroid.lib.arouter.fragment.RouterFragmentPath
 
-import com.dandroid.base.BaseFragment
+import com.dandroid.lib.base.BaseFragment
+import com.dandroid.module.home.databinding.ModuleHomeFragmentBinding
 
-class DashboardFragment : BaseFragment<DashboardViewModel, Dash>() {
+@Route(path = RouterFragmentPath.Home.PAGER_HOME)
+class DashboardFragment : BaseFragment<DashboardViewModel, ModuleHomeFragmentBinding>() {
 
     private lateinit var dashboardViewModel: DashboardViewModel
 
 
-    override fun layoutId(): Int =R.layout.activity_model_home
+    override fun layoutId(): Int = R.layout.module_home_fragment
 
     override fun initView(savedInstanceState: Bundle?) {
         TODO("Not yet implemented")

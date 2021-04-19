@@ -1,4 +1,4 @@
-package me.hgj.jetpackmvvm.network.interceptor.logging
+package com.dandroid.network.interceptor.logging
 
 import okhttp3.MediaType
 import okhttp3.Request

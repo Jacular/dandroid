@@ -3,6 +3,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 android {
     compileSdkVersion rootProject.ext.build_version.compileSdkVersion
 
@@ -55,13 +60,11 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    //基础模块
-    api project(path: ':lib-base')
-    //公用模块
-    api project(path: ':lib-common')
-
+    //全局模块
+    api project(path: ':lib-global')
     //each遍历
     api apiDependenciesId
+    rootProject.ext.compilers.each{k,v-> kapt v}
 }
 
 

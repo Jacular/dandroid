@@ -1,11 +1,14 @@
 package com.dandroid.network
 
 
-import com.dandroid.common.appContext
+import com.dandroid.lib.global.appContext
 import com.dandroid.network.interceptor.CacheInterceptor
 import com.dandroid.network.interceptor.HeadInterceptor
 import com.google.gson.GsonBuilder
 import com.dandroid.network.interceptor.logging.LogInterceptor
+import com.franmontiel.persistentcookiejar.PersistentCookieJar
+import com.franmontiel.persistentcookiejar.cache.SetCookieCache
+import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,6 +16,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
+import com.dandroid.network.BuildConfig
 
 /**
  *设置构造器可以对Builder做任意操作

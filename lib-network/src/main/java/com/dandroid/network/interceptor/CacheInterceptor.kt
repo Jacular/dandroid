@@ -1,7 +1,7 @@
 package com.dandroid.network.interceptor
 
 
-import com.dandroid.common.appContext
+import com.dandroid.lib.global.appContext
 import com.dandroid.network.NetworkUtil
 import okhttp3.CacheControl
 import okhttp3.Interceptor

@@ -9,4 +9,6 @@ android {
 
 dependencies {
 
+    //全局模块
+    api project(path: ':lib-common')
 }

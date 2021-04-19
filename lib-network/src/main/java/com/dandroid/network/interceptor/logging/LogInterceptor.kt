@@ -5,8 +5,6 @@ import com.dandroid.common.utils.CharacterHandler.Companion.jsonFormat
 import com.dandroid.common.utils.UrlEncoderUtils.Companion.hasUrlEncoded
 import com.dandroid.common.utils.ZipHelper.Companion.decompressForGzip
 import com.dandroid.common.utils.ZipHelper.Companion.decompressToStringForZlib
-import me.hgj.jetpackmvvm.network.interceptor.logging.DefaultFormatPrinter
-import me.hgj.jetpackmvvm.network.interceptor.logging.FormatPrinter
 import okhttp3.*
 import okio.Buffer
 import java.io.IOException

@@ -2,8 +2,8 @@ package com.dandroid.network.interceptor
 
 import android.os.Build
 import android.util.Base64
-import com.dandroid.common.appContext
-import com.dandroid.common.utils.AppUtils
+import com.dandroid.lib.global.AppUtils
+import com.dandroid.lib.global.appContext
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException

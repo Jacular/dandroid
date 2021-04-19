@@ -1,4 +1,4 @@
-package me.hgj.jetpackmvvm.network.interceptor.logging
+package com.dandroid.network.interceptor.logging
 
 import android.text.TextUtils
 import com.dandroid.common.utils.CharacterHandler.Companion.jsonFormat
@@ -12,7 +12,7 @@ import okhttp3.Request
 /**
  * 打印网络请求信息
  */
-class DefaultFormatPrinter : FormatPrinter{
+class DefaultFormatPrinter : FormatPrinter {
     /**
      * 打印网络请求信息, 当网络请求时 {[okhttp3.RequestBody]} 可以解析的情况
      *

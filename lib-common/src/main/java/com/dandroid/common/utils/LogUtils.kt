@@ -2,14 +2,14 @@ package com.dandroid.common.utils
 
 import android.text.TextUtils
 import android.util.Log
-import com.dandroid.common.ext.appLog
+import com.dandroid.lib.global.appLog
 
 
 /**
  * 日志
  */
 object LogUtils {
-    private const val DEFAULT_TAG = "JetpackMvvm"
+    private const val DEFAULT_TAG = "dandroid"
     fun debugInfo(tag: String?, msg: String?) {
         if (!appLog || TextUtils.isEmpty(msg)) {
             return

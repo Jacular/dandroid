@@ -3,11 +3,5 @@
     package="com.dandroid.common">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <application>
-        <provider
-            android:name=".AppContentProvider"
-            android:authorities="${applicationId}.appcontentprovider"
-            android:exported="false"
-            android:multiprocess="true" />
-    </application>
+
 </manifest>
