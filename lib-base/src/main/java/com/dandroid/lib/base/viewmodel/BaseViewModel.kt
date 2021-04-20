@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 
 
 /**
- * ViewModel的基类 使用ViewModel类，放弃AndroidViewModel，原因：用处不大 完全有其他方式获取Application上下文
+ * ViewModel的基类 使用ViewModel类
  */
 open class BaseViewModel : ViewModel() {
 

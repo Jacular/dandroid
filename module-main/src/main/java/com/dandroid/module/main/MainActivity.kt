@@ -27,7 +27,7 @@ open class MainActivity : BaseActivity<MainViewModel, ModuleMainActivityBinding>
         //设置fragment到布局
         supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, fragment).show(fragment).commit()
 
-        mDatabind.navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        mDataBind.navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
     }
     private val mOnNavigationItemSelectedListener: BottomNavigationView.OnNavigationItemSelectedListener =

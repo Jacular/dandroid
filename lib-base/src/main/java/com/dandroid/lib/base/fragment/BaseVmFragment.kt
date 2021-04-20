@@ -18,6 +18,7 @@ import com.dandroid.lib.global.exception.receive.NetworkStateManager
 
 
 /**
+ * 不需要DataBinding的用继承这个base
  * ViewModelFragment基类，自动把ViewModel注入Fragment
  */
 

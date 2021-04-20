@@ -10,6 +10,7 @@ import com.dandroid.lib.global.exception.receive.NetState
 import com.dandroid.lib.global.exception.receive.NetworkStateManager
 
 /**
+ * 不需要DataBinding的用继承这个base
  *ViewModelActivity基类，把ViewModel注入进来了
  */
 abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
@@ -102,7 +103,7 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
     }
 
     /**
-     * 供子类BaseVmDbActivity 初始化Databinding操作
+     * 供子类BaseVmDbActivity 初始化DataBinding操作
      */
     open fun initDataBind() {}
 }

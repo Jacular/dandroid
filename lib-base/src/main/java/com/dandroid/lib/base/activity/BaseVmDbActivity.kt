@@ -6,12 +6,12 @@ import androidx.databinding.ViewDataBinding
 import com.dandroid.lib.base.viewmodel.BaseViewModel
 
 /**
- * 包含ViewModel 和Databind ViewModelActivity基类，把ViewModel 和DataBind注入进来了
- * 需要使用Dataind的清继承它
+ * 包含ViewModel 和DataBind ViewModelActivity基类，把ViewModel 和DataBind注入进来了
+ * 需要使用DataBind这个base
  */
 abstract class BaseVmDbActivity<VM : BaseViewModel, DB : ViewDataBinding> : BaseVmActivity<VM>() {
 
-    lateinit var mDatabind: DB
+    lateinit var mDataBind: DB
 
     override fun onCreate(savedInstanceState: Bundle?) {
         userDataBinding(true)
@@ -22,7 +22,7 @@ abstract class BaseVmDbActivity<VM : BaseViewModel, DB : ViewDataBinding> : Base
      * 创建DataBinding
      */
     override fun initDataBind() {
-        mDatabind = DataBindingUtil.setContentView(this, layoutId())
-        mDatabind.lifecycleOwner = this
+        mDataBind = DataBindingUtil.setContentView(this, layoutId())
+        mDataBind.lifecycleOwner = this
     }
 }
