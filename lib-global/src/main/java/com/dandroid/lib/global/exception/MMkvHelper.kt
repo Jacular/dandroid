@@ -18,7 +18,7 @@ import java.util.*
  *
  */
 class MMkvHelper private constructor() {
-    val mmkv: MMKV
+    val mmkv: MMKV = MMKV.defaultMMKV()
 
     /**
      * 存入map集合
@@ -99,7 +99,4 @@ class MMkvHelper private constructor() {
             }
     }
 
-    init {
-        mmkv = MMKV.defaultMMKV()
-    }
 }
