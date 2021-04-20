@@ -11,10 +11,12 @@ import com.tencent.mmkv.MMKV
  *
  */
 class CommonModuleInit : IModuleInit {
-    override fun onInitAhead(application: Application?): Boolean {
+    override fun onInitAhead(application: BaseApplication?): Boolean {
         MMKV.initialize(application)
-        ARouter.openLog()
-        ARouter.openDebug()
+        if (application?.issDebug()==true){
+            ARouter.openLog()
+            ARouter.openDebug()
+        }
         ARouter.init(application)
 
         return false

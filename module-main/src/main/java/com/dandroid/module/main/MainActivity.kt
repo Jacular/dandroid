@@ -14,7 +14,7 @@ import com.dandroid.module.main.databinding.ModuleMainActivityBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-open class MainActivity : BaseActivity<MainViewModel, ModuleMainActivityBinding>() {
+class MainActivity : BaseActivity<MainViewModel, ModuleMainActivityBinding>() {
 
     override fun layoutId(): Int =R.layout.module_main_activity
     private var fragments: ArrayList<Fragment> =  ArrayList()
@@ -24,10 +24,10 @@ open class MainActivity : BaseActivity<MainViewModel, ModuleMainActivityBinding>
         fragments.add(fragment)
         fragments.add(ARouter.getInstance().build(RouterFragmentPath.Msg.PAGER_MSG).navigation() as Fragment)
         fragments.add(ARouter.getInstance().build(RouterFragmentPath.User.PAGER_USER).navigation() as Fragment)
-        //设置fragment到布局
+       // 设置fragment到布局
         supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, fragment).show(fragment).commit()
 
-        mDataBind.navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+       mDataBind.navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
     }
     private val mOnNavigationItemSelectedListener: BottomNavigationView.OnNavigationItemSelectedListener =

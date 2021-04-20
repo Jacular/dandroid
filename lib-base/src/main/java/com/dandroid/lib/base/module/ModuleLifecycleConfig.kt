@@ -16,7 +16,7 @@ class ModuleLifecycleConfig private constructor() {
     /**
      * 优先初始化
      */
-    fun initModuleAhead(application: Application?) {
+    fun initModuleAhead(application: BaseApplication?) {
         for (moduleName in initModuleNames) {
             try {
                 val clazz = Class.forName(moduleName)

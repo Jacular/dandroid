@@ -11,7 +11,8 @@ import java.util.logging.Logger
  */
 class MainModuleInit : IModuleInit {
 
-    override fun onInitAhead(application: Application?): Boolean {
+    override fun onInitAhead(application: BaseApplication?): Boolean {
+
         return false
     }
 

@@ -10,7 +10,7 @@ interface IModuleInit {
     /**
      * 需要优先初始化的
      */
-    fun onInitAhead(application: Application?): Boolean
+    fun onInitAhead(application: BaseApplication?): Boolean
 
     /**
      * 可以后初始化的

@@ -11,6 +11,7 @@ import com.dandroid.lib.base.module.ModuleLifecycleConfig
 class AppApplication : BaseApplication() {
     override fun onCreate() {
         super.onCreate()
+        setsDebug(BuildConfig.DEBUG)
         // 初始化需要初始化的组件
         ModuleLifecycleConfig.instance.initModuleAhead(this)
     }

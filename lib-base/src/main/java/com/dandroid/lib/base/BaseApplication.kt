@@ -41,10 +41,16 @@ open class BaseApplication : Application() {
                 }
             })
     }
+    fun setsDebug(isDebug: Boolean) {
+        isDebugModel = isDebug
+    }
 
+    fun issDebug(): Boolean {
+        return isDebugModel
+    }
     companion object {
         private var instance: BaseApplication? = null
-
+        private var isDebugModel=false
         /**
          * 获得当前app运行的Application
          */

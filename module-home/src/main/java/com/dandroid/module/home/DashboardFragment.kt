@@ -10,12 +10,10 @@ import com.dandroid.module.home.databinding.ModuleHomeFragmentBinding
 @Route(path = RouterFragmentPath.Home.PAGER_HOME)
 class DashboardFragment : BaseFragment<DashboardViewModel, ModuleHomeFragmentBinding>() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
-
 
     override fun layoutId(): Int = R.layout.module_home_fragment
 
     override fun initView(savedInstanceState: Bundle?) {
-        TODO("Not yet implemented")
+
     }
 }
